@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { RacketScene } from './components/RacketScene';
 import { Section } from './components/Section';
+import { Loader } from './components/Loader';
 import { useScrollProgress } from './hooks/useScrollProgress';
 import './style.css';
 
@@ -10,12 +12,14 @@ export default function App() {
     return (
         <div className="app">
             {/* Fixed 3D Canvas Background */}
-            <Canvas
-                camera={{ position: [0, 0, 5], fov: 50 }}
-                style={{ position: 'fixed', top: 0, left: 0, zIndex: 0 }}
-            >
-                <RacketScene scrollProgress={scrollProgress} />
-            </Canvas>
+            <Suspense fallback={<Loader />}>
+                <Canvas
+                    camera={{ position: [0, 0, 5], fov: 50 }}
+                    style={{ position: 'fixed', top: 0, left: 0, zIndex: 0 }}
+                >
+                    <RacketScene scrollProgress={scrollProgress} />
+                </Canvas>
+            </Suspense>
 
             {/* Particle overlay effect */}
             <div className="particle-overlay" />
@@ -64,3 +68,4 @@ export default function App() {
         </div>
     );
 }
+
