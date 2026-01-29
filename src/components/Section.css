@@ -1,0 +1,97 @@
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section__content {
+    max-width: 600px;
+    color: var(--text-primary);
+}
+
+.section--left .section__content {
+    margin-right: auto;
+    margin-left: 5vw;
+}
+
+.section--center .section__content {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section--right .section__content {
+    margin-left: auto;
+    margin-right: 5vw;
+}
+
+.section h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section h2 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.section p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.section__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: rgba(74, 158, 255, 0.1);
+    border: 1px solid rgba(74, 158, 255, 0.3);
+    border-radius: 50px;
+    color: var(--accent-blue);
+    font-weight: 500;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.section__cta:hover {
+    background: rgba(74, 158, 255, 0.2);
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(74, 158, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 1rem;
+    }
+
+    .section--left .section__content,
+    .section--right .section__content {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
