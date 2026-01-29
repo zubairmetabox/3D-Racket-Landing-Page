@@ -8,6 +8,7 @@ A premium, scroll-driven 3D product landing page showcasing a Wilson tennis rack
 
 - **Scroll-Driven 3D Animations**: Interactive 3D racket model that transforms as you scroll
 - **5 Animation Phases**: Smooth transitions through different viewing angles and zoom levels
+- **Premium Loading Screen**: Animated spinner with gradient effects while model loads
 - **Premium Design**: Deep space color scheme with glassmorphism effects
 - **Responsive Layout**: Optimized for all screen sizes
 - **Performance Optimized**: 60fps smooth animations with throttled scroll events
@@ -15,15 +16,9 @@ A premium, scroll-driven 3D product landing page showcasing a Wilson tennis rack
 
 ## 🚀 Live Demo
 
-[View Live Demo](#) _(Add your deployment URL here)_
+**[View Live Demo →](https://3-d-racket-landing-page.vercel.app/)**
 
-## 📸 Screenshots
-
-### Hero Section
-The landing page features a large 3D Wilson racket model with the tagline "Power Without Limits"
-
-### Scroll Animations
-As users scroll, the racket rotates, scales, and repositions to showcase different angles and features
+Experience the interactive 3D racket with scroll-driven animations in action!
 
 ## 🛠️ Tech Stack
 
@@ -32,8 +27,6 @@ As users scroll, the racket rotates, scales, and repositions to showcase differe
 - **React Three Fiber** - React renderer for Three.js
 - **@react-three/drei** - Useful helpers for R3F
 - **Vite** - Build tool and dev server
-- **GSAP** - Animation library (ready for advanced animations)
-- **Lenis** - Smooth scroll library (ready for implementation)
 
 ## 📦 Installation
 
@@ -62,6 +55,8 @@ src/
 ├── components/
 │   ├── RacketModel.jsx       # 3D racket model with scroll animations
 │   ├── RacketScene.jsx       # 3D scene setup with lighting
+│   ├── Loader.jsx            # Loading screen component
+│   ├── Loader.css            # Loader styles
 │   ├── Section.jsx           # Reusable content section component
 │   └── Section.css           # Section styles
 ├── hooks/
@@ -82,6 +77,7 @@ public/
 - **Text**: White with varying opacity for hierarchy
 
 ### Visual Effects
+- Premium loading screen with animated spinner rings
 - Film grain texture overlay
 - Radial gradient glows
 - Glassmorphism on interactive elements
